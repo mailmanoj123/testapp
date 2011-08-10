@@ -2,9 +2,10 @@ server = require("./server")
 router = require("./router")
 requestHandlers = require("./requestHandlers")
 
-handle = {"/":requestHandlers.start, 
-	"/start":requestHandlers.start, 
-	"/upload":requestHandlers.upload, 
-	"/show":requestHandlers.show }
+handle = {}
+handle["/"] = requestHandlers.start
+handle["/start"] = requestHandlers.start
+handle["/upload"] = requestHandlers.upload
+handle["/show"] = requestHandlers.show
 
 server.start(router.route, handle)
